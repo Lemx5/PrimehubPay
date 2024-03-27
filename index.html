@@ -74,6 +74,23 @@
                 width: 90%;
             }
         }
+        #copy-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        #copy-button:hover {
+            background-color: #45a049;
+            }
     </style>
 </head>
 
@@ -92,22 +109,41 @@
             <button class="button" id="payment-button" type="button">Pay Now</button>
         </a>
     </div>
-    <script>
-        document.getElementById("copy-button").addEventListener("click", function() {
-            var copyText = document.getElementById("upi-id").textContent;
-            var tempInput = document.createElement("input");
-            tempInput.value = copyText;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            alert("UPI ID copied to clipboard");
-        });
+<script>
+    document.getElementById("copy-button").addEventListener("click", function() {
+        var copyText = "iPrimehub@axl";
+        var tempInput = document.createElement("input");
+        tempInput.value = copyText;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+        alert("UPI ID copied to clipboard");
+    });
 
-        if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-            document.getElementById("payment-button").innerText = "Scan QR code"
-        }
-    </script>
+    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+        document.getElementById("payment-button").innerText = "Scan QR code"
+    }
+</script>
 </body>
 
 </html>
+<style>
+    #copy-button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 12px;
+    }
+
+    #copy-button:hover {
+        background-color: #45a049;
+    }
+</style>
